@@ -66,22 +66,37 @@
         .submit-btn:hover {
             background-color: #0056b3;
         }
+
+        .text-danger {
+            color: red;
+            font-size: 14px;
+        }
     </style>
 </head>
 
 <body>
     <div class="login-container">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" [(ngModel)]="userObj.username" name="username" id="username"
-                placeholder="Enter your username" required />
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" [(ngModel)]="userObj.password" name="password" id="password"
-                placeholder="Enter your password" required />
-        </div>
-        <button class="submit-btn" (click)="onLogin()">Login</button>
+        <form #loginForm="ngForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" #username="ngModel" [(ngModel)]="userObj.username" name="username" id="username"
+                    placeholder="Enter your username" required />
+                <div class="text-danger text-center p-1" *ngIf="username.touched && username.invalid">
+                    Username is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" #password="ngModel" [(ngModel)]="userObj.password" name="password" id="password"
+                    placeholder="Enter your password" required />
+                <div class="text-danger text-center p-1" *ngIf="password.touched && password.invalid">
+                    Password is required
+                </div>
+            </div>
+            <button class="submit-btn" [disabled]="loginForm.invalid" (click)="onLogin()">
+                Login
+            </button>
+        </form>
     </div>
 </body>
 
