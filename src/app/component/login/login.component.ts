@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,14 +16,14 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient, private fb: FormBuilder) { }
 
   // Check if user is already logged in when the component initializes
   ngOnInit(): void {
     const loggedUser = localStorage.getItem('loginUser');
     if (loggedUser) {
       // User is already logged in, redirect to layout or desired route
-      this.router.navigateByUrl('layout');
+      this.router.navigateByUrl('layout/main');
     }
   }
 
