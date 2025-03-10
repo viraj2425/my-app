@@ -1,45 +1,52 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
-import { FormsModule, NgForm, NgModel, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  userObj: any = {
+export class LoginComponent implements OnInit {
+  userObj = {
     username: '',
     password: ''
   };
-  router = inject(Router);
-  http = inject(HttpClient)
 
-  onLogin() {
+  constructor(private router: Router, private http: HttpClient) { }
+
+  // Check if user is already logged in when the component initializes
+  ngOnInit(): void {
+    const loggedUser = localStorage.getItem('loginUser');
+    if (loggedUser) {
+      // User is already logged in, redirect to layout or desired route
+      this.router.navigateByUrl('layout');
+    }
+  }
+
+  onLogin(): void {
+    if (!this.userObj.username || !this.userObj.password) {
+      alert("Please enter both username and password.");
+      return;
+    }
+
     this.http.post('https://dummyjson.com/auth/login', this.userObj).subscribe({
       next: (res: any) => {
-        if (res) {
-          alert("login successfully!");
+        if (res && res.username) {
+          alert("Login successfully!");
           localStorage.setItem('loginUser', res.username);
           this.router.navigateByUrl('layout');
         } else {
-          alert("user not found");
+          alert("User not found.");
         }
       },
       error: (err: any) => {
         console.error('Login error', err);
-        alert("User Invalid");
+        alert("Invalid username or password.");
       }
     });
-    // if (this.userObj.userName == "admin" && this.userObj.password == "1234") {
-    // alert("login success");
-    //localStorage.setItem('loginUser', this.userObj.userName)
-    //this.router.navigateByUrl('layout')
-    //} else {
-    // alert("login declined")
-    //}
   }
 }
