@@ -1,67 +1,58 @@
 {
-  "hash": "d63a7af0",
-  "configHash": "6d076843",
+  "hash": "4bbc9688",
+  "configHash": "74d49d56",
   "lockfileHash": "ee94fc8f",
-  "browserHash": "edb5e41e",
+  "browserHash": "d664f756",
   "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "54961217",
+      "needsInterop": false
+    },
     "@angular/common/http": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "4077f71d",
+      "fileHash": "7420b1d6",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "f2f23eb3",
+      "fileHash": "869aae80",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "76f471f0",
+      "fileHash": "29830784",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "8c0b7456",
+      "fileHash": "34269816",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "7658f9fb",
-      "needsInterop": false
-    },
-    "@angular/common": {
-      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
-      "file": "@angular_common.js",
-      "fileHash": "387b094c",
-      "needsInterop": false
-    },
-    "@angular/fire/auth-guard": {
-      "src": "../../../../../../node_modules/@angular/fire/fesm2022/angular-fire-auth-guard.mjs",
-      "file": "@angular_fire_auth-guard.js",
-      "fileHash": "7b65779d",
+      "fileHash": "a11d07cb",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-HNNGHE7V": {
-      "file": "chunk-HNNGHE7V.js"
+    "chunk-NKNOXCPH": {
+      "file": "chunk-NKNOXCPH.js"
     },
-    "chunk-5LHZDAJP": {
-      "file": "chunk-5LHZDAJP.js"
+    "chunk-KEQJ64QG": {
+      "file": "chunk-KEQJ64QG.js"
     },
-    "chunk-K67C4W5X": {
-      "file": "chunk-K67C4W5X.js"
+    "chunk-U3FJ3BT6": {
+      "file": "chunk-U3FJ3BT6.js"
     },
-    "chunk-KOCZOLIJ": {
-      "file": "chunk-KOCZOLIJ.js"
-    },
-    "chunk-N4BPQQ3X": {
-      "file": "chunk-N4BPQQ3X.js"
+    "chunk-TXZMGFPN": {
+      "file": "chunk-TXZMGFPN.js"
     }
   }
 }
